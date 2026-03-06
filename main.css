@@ -20,23 +20,20 @@ p {
     -webkit-text-fill-color: transparent; /* Makes text show the image */
 }
 
-/* This makes the button large and centered on top */
 .main-button {
-    position: fixed;
+    position: absolute; /* Change fixed to absolute */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 9999; /* Higher than the lyrics */
+    z-index: 99999; /* Overkill to make sure it's on top */
 
-    padding: 25px 60px; /* Makes it large */
-    font-size: 28px;
-    font-family: sans-serif;
-    font-weight: bold;
-    
-    background-color: #fff;
-    color: #000;
+    padding: 30px 70px; /* Even LARGER button */
+    font-size: 32px;
+    background-color: #ffffff;
+    color: #000000;
     border: none;
-    border-radius: 50px;
+    border-radius: 100px;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: block !important; /* Force it to show */
 }
