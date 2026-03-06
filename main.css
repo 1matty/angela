@@ -15,19 +15,14 @@ p {
 }
 
 .main-button {
-    position: absolute; /* Change fixed to absolute */
+    background-color: #000000; /* Black button */
+    color: #ffffff;            /* White text */
+    
+    /* Keep your existing positioning */
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 99999; /* Overkill to make sure it's on top */
-
-    padding: 30px 70px; /* Even LARGER button */
-    font-size: 32px;
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 100px;
-    font-weight: bold;
-    cursor: pointer;
-    display: block !important; /* Force it to show */
+    z-index: 9999;
+    /* ... keep other styles ... */
 }
