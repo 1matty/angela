@@ -1,23 +1,17 @@
 /* This makes the lyrics cover the background */
-p { 
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    z-index: 1; /* Keeps lyrics on the bottom layer */
+p {
+    /* Increase these slightly so the letters don't touch each other */
+    font-size: 12px;
+    line-height: 11px;
+    letter-spacing: 1px;
 
-    font-size: 10px;
-    line-height: 9px;
-    text-align: justify;
-    text-transform: uppercase;
-    word-break: break-all;
+    /* Add this to make the dark parts of the photo pop more */
+    filter: contrast(1.4) brightness(0.8);
 
-    background: url(angela.jpg) no-repeat center center;
-    background-size: cover;
+    /* Ensure these are still present */
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent; /* Makes text show the image */
+    -webkit-text-fill-color: transparent;
 }
 
 .main-button {
