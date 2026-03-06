@@ -1,28 +1,50 @@
-/* This makes the lyrics cover the background */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    overflow: hidden;
+    /* Create a new stacking context for the whole page */
+    isolation: isolate; 
+}
+
 p {
-    /* Increase these slightly so the letters don't touch each other */
-    font-size: 12px;
-    line-height: 11px;
-    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    /* This ensures the lyrics stay on the bottom layer */
+    position: relative;
+    z-index: 1; 
 
-    /* Add this to make the dark parts of the photo pop more */
-    filter: contrast(1.4) brightness(0.8);
-
-    /* Ensure these are still present */
+    /* Keep your existing font and background-clip settings */
+    font-size: 10px;
+    line-height: 9px;
+    text-align: justify;
+    text-transform: uppercase;
+    word-break: break-all;
+    background: url(angela.jpg) no-repeat center center;
+    background-size: cover;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .main-button {
-    background-color: #000000; /* Black button */
-    color: #ffffff;            /* White text */
-    
-    /* Keep your existing positioning */
-    position: fixed;
+    /* Use fixed to keep it centered regardless of the lyrics height */
+    position: fixed; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 9999;
-    /* ... keep other styles ... */
+    /* Set this much higher than the p tag's z-index */
+    z-index: 999; 
+
+    /* Styling - Keep it solid white so it's visible */
+    padding: 20px 50px;
+    font-size: 24px;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: block !important; /* Force display */
 }
