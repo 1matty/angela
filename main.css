@@ -1,29 +1,42 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: #000;
-    overflow: hidden;
-}
-
+/* This makes the lyrics cover the background */
 p { 
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
+    position: relative;
+    z-index: 1; /* Keeps lyrics on the bottom layer */
 
-    font-size: 8px;
-    line-height: 8px;
+    font-size: 10px;
+    line-height: 9px;
     text-align: justify;
     text-transform: uppercase;
     word-break: break-all;
 
     background: url(angela.jpg) no-repeat center center;
     background-size: cover;
-    background-attachment: fixed;
-
     -webkit-background-clip: text;
     background-clip: text;
+    -webkit-text-fill-color: transparent; /* Makes text show the image */
+}
 
-    -webkit-text-fill-color: transparent;
+/* This makes the button large and centered on top */
+.main-button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Higher than the lyrics */
 
+    padding: 25px 60px; /* Makes it large */
+    font-size: 28px;
+    font-family: sans-serif;
+    font-weight: bold;
+    
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
